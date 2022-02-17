@@ -17,6 +17,7 @@ async function pipeTo(readable, writable) {
       console.log(`Chunk[${chunkId}] piped:`, value)
       if (done) {
         writer.close()
+        return
       } else {
         writer.write(value)
       }
